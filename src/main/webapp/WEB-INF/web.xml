@@ -1,73 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
-  <display-name>TeduStore</display-name>
-  <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
-  </welcome-file-list>
-  
-  <!-- 配置DispatcherServlet -->
-    <servlet>
-        <servlet-name>SpringMVC</servlet-name>
-        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-        <!-- 当Servlet被初始化时加载Spring配置文件 -->
-        <init-param>
-            <param-name>contextConfigLocation</param-name>
-            <param-value>classpath:spring-mvc.xml</param-value>
-        </init-param>
-        <!-- 当Tomcat启动时就初始化当前Servlet -->
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-    <!-- 配置Servlet对应的请求路径 -->
-    <servlet-mapping>
-        <servlet-name>SpringMVC</servlet-name>
-        <url-pattern>/</url-pattern>
-    </servlet-mapping>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+	<display-name>TeduStore</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
 
-    <!-- 配置springMVC编码过滤器 -->
-    <filter>
-        <filter-name>CharacterEncodingFilter</filter-name>
-        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
-        <!-- 设置过滤器中的属性值 -->
-        <init-param>
-            <param-name>encoding</param-name>
-            <param-value>UTF-8</param-value>
-        </init-param>
-        <!-- 启动过滤器 -->
-        <init-param>
-            <param-name>forceEncoding</param-name>
-            <param-value>true</param-value>
-        </init-param>
-    </filter>
-    <!-- 过滤所有请求 -->
-    <filter-mapping>
-        <filter-name>CharacterEncodingFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
+	<!-- 配置是哪个Servlet -->
+	<servlet>
+		<servlet-name>SpringMVC</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<!-- 当Servlet被初始化时加载Spring配置文件 -->
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:spring-*.xml</param-value>
+		</init-param>
+		<!-- 当Tomcat启动时就初始化当前Servlet -->
+		<load-on-startup>1</load-on-startup>
+	</servlet>
 
-    <!-- 配置spring提供的监听器，用于启动服务时加载容器 -->
-    <listener>
-        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-    </listener>
-    <!-- 因为我们名字和位置都和默认值不同，所以要手动指定spring配置文件位置，注意param-value的值，要和创建的名字一致 -->
-    <context-param>
-        <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:spring.xml</param-value>
-    </context-param>
+	<!-- 配置Servlet对应的请求路径 -->
+	<servlet-mapping>
+		<servlet-name>SpringMVC</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 配置HTML访问过滤器 -->
+	<filter>
+		<filter-name>HtmlAccessFilter</filter-name>
+		<filter-class>cn.tedu.store.filter.HtmlAccessFilter</filter-class>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>HtmlAccessFilter</filter-name>
+		<url-pattern>*.html</url-pattern>
+	</filter-mapping>
 
-    <!-- 增加HiddenHttpMethodFilte过滤器：给普通浏览器增加 put|delete请求方式 -->
-    <filter>
-        <filter-name>HiddenHttpMethodFilte</filter-name>
-        <filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>HiddenHttpMethodFilte</filter-name>
-        <!-- 过滤所有：/*-->
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
-    
+	<!-- 配置字符编码过滤器 -->
+	<filter>
+		<filter-name>CharacterEncodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>utf-8</param-value>
+		</init-param>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>CharacterEncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
 </web-app>

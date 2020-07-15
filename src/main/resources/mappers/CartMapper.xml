@@ -2,12 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
 	"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
 
-<mapper namespace="com.udesk.mapper.CartMapper">
+<mapper namespace="cn.tedu.store.mapper.CartMapper">
 
 	<!-- 增加新的购物车数据 -->
 	<!-- Integer insert(Cart cart) -->
 	<insert id="insert"
-		parameterType="com.udesk.entity.Cart"
+		parameterType="cn.tedu.store.entity.Cart"
 		useGeneratedKeys="true"
 		keyProperty="id">
 		INSERT INTO t_cart (
@@ -69,7 +69,7 @@
 			@Param("offset") Integer offset, 
 			@Param("count") Integer count) -->
 	<select id="getList"
-		resultType="com.udesk.entity.Cart">
+		resultType="cn.tedu.store.entity.Cart">
 		SELECT
 			id, uid,
 			goods_id AS goodsId,
@@ -97,7 +97,7 @@
 			@Param("uid") Integer uid, 
 			@Param("ids") Integer[] ids) -->
 	<select id="getListByIds"
-		resultType="com.udesk.entity.Cart">
+		resultType="cn.tedu.store.entity.Cart">
 		SELECT 
 			id, uid,
 			goods_id AS goodsId,
@@ -110,7 +110,8 @@
 		WHERE 
 			uid=#{uid} AND 
 			id IN
-			<foreach collection="ids" separator="," item="id" open="(" close=")">
+			<foreach collection="ids" separator="," item="id"
+				open="(" close=")">
 				#{id}
 			</foreach>
 	</select>

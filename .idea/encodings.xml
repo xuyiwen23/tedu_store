@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" addBOMForNewFiles="with NO BOM">
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/tedu/store/controller/AddressController.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/tedu/store/controller/BaseController.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/tedu/store/controller/DistrictController.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/tedu/store/controller/GoodsCategoryController.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/tedu/store/controller/GoodsController.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/tedu/store/controller/OrderController.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/tedu/store/controller/UserController.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/tedu/store/filter/HtmlAccessFilter.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/tedu/store/interceptor/LoginInterceptor.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/tedu/store/mapper/AddressMapper.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/tedu/store/mapper/GoodsCategoryMapper.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/tedu/store/mapper/GoodsMapper.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/tedu/store/mapper/OrderMapper.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/tedu/store/mapper/UserMapper.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/tedu/store/service/IAddressService.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/tedu/store/service/IDistrictService.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/tedu/store/service/IGoodsCategoryService.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/tedu/store/service/IGoodsService.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/tedu/store/service/IOrderService.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/tedu/store/service/IUserService.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/tedu/store/service/impl/AddressServiceImpl.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/tedu/store/service/impl/OrderServiceImpl.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/tedu/store/service/impl/UserServiceImpl.java" charset="GBK" />
+  </component>
+</project>
